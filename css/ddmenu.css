@@ -1,0 +1,489 @@
+/* main menu
+----------------------------*/
+.menu {
+  width: 100%;
+  padding-top: 38px;
+}
+.vm {
+  background: url(../images/menu-vision.jpg) no-repeat bottom right #fff;
+}
+.vm1 {
+  background: /*url(../images/infra.jpg) */ no-repeat bottom left #fff;
+  background-size: contain;
+}
+.vm2 {
+  background: url(../images/team.jpg) no-repeat bottom #fff;
+}
+.vm3 {
+  background: #fff;
+} /*url(../media/2066/clubm.jpg) no-repeat bottom left*/
+.spehide {
+  display: none;
+}
+.mvthumb {
+  padding: 20px 0;
+}
+.mvthumb a {
+  margin: 10px 1%;
+}
+.topspelink {
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: 1px solid #f68e34;
+}
+.spelink {
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-style: italic;
+  font-size: 18px;
+  border: 1px solid #f68e34;
+  display: inline-block;
+}
+.vision-menutxt {
+  white-space: initial;
+  text-align: left;
+  font-size: 18px;
+  font-style: italic;
+  clear: both;
+  display: block;
+  padding: 15px 15px;
+  line-height: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #555;
+}
+#ddmenu {
+  display: block;
+  font-family: "Raleway", sans-serif;
+  float: right;
+  text-align: right; /*Specify the alignment of the whole UL if UL is not width:100%;*/
+  letter-spacing: normal;
+}
+#ddmenu ul {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center; /* Alignment of each top-level menu items within the UL */
+  width: 100%;
+  font-size: 0;
+  background: #ffffff;
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  z-index: 999; /*999990*/
+  border: none;
+  border-radius: 2px;
+}
+#ddmenu li {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1; /*for IE6-7*/
+  position: relative;
+  color: #506472;
+  line-height: 26px; /*This determines the height of the menu*/
+  vertical-align: middle;
+  transition: background-color 0.2s;
+  outline: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+#ddmenu .full-width {
+  position: static;
+}
+#ddmenu .over {
+  color: #f68e34;
+  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #999 \9; /*fallback for old IE*/
+}
+#ddmenu .over.no-sub {
+}
+#ddmenu .top-heading {
+  font-weight: 500;
+  margin: 0 22px;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+}
+/* links of top-heading */
+#ddmenu a,
+#ddmenu a:link,
+#ddmenu a:hover {
+  color: inherit;
+}
+/*#ddmenu a:focus
+{
+    outline:1px dotted #09F;
+}*/
+
+/* caret(arrow icon) */
+#ddmenu .caret {
+  color: inherit;
+  left: -18px;
+  width: 0;
+  height: 0;
+  overflow: hidden; /*for IE6*/
+  vertical-align: middle;
+  margin-bottom: 2px;
+  border-top: 4px solid; /*caret size is 4px now*/
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  display: inline-block;
+  position: relative;
+}
+/* sub-menu layout
+----------------------------*/
+
+#ddmenu .dropdown {
+  width: auto;
+  left: 0px;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  /*box-shadow: 0px 4px 4px rgba(0,0,0,0.14);border:1px solid #CCC;*/
+}
+#ddmenu .full-width .dropdown {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+#ddmenu .offset300 {
+  left: -300px;
+  right: auto;
+}
+#ddmenu .right-aligned {
+  left: auto;
+  right: 0px;
+}
+#ddmenu .over .dropdown {
+  display: block;
+}
+#ddmenu .dd-inner {
+  text-align: center;
+  padding: 10px;
+  margin: 0px;
+  background-color: #ffffff;
+  white-space: nowrap;
+  font-size: 13px;
+}
+#ddmenu ul ul {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: auto;
+  background: none;
+  border: none;
+  display: block;
+  position: static;
+  z-index: 0;
+  border-radius: 0;
+}
+#ddmenu ul ul li {
+  font-size: 15px;
+  padding: 6px 0; /*It determines the line height*/
+  color: inherit;
+  line-height: 1.5;
+  margin: 0;
+  display: block;
+  position: static;
+  background: none;
+  border: none;
+  transition: none;
+  border-radius: 0;
+}
+/* links in sub menu
+----------------------------*/
+#ddmenu .dropdown a {
+  color: #333333;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.4s;
+  white-space: normal;
+}
+#ddmenu .dropdown a:hover,
+#ddmenu .dropdown a:focus {
+  text-decoration: none;
+  color: #de7011;
+}
+/* blocks within the sub-menu
+-----------------------------*/
+#ddmenu .column {
+  text-align: left;
+  vertical-align: top; /*or middle*/
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  white-space: normal;
+  width: auto;
+  min-width: 200px;
+  max-width: 245px;
+  padding: 0 10px;
+  border-right: 1px solid #ddd;
+}
+#ddmenu .dd-inner ul:last-child {
+  border-right: none;
+}
+
+#ddmenu h3 {
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  border-bottom: 1px solid #fc3;
+  color: #e9573e;
+  padding-bottom: 5px;
+}
+#ddmenu li {
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+}
+#ddmenu li:first-child {
+  border-left: none;
+}
+#ddmenu li:last-child {
+  border-right: none;
+}
+#ddmenuLink {
+  display: none;
+}
+/*######## add additional styles for mobile-friendly responsive menu ########*/
+
+#ddmenu .menu-icon {
+  display: none; /* hide menu icon initially */
+}
+
+/*styles for responsive menu*/
+@media only screen and (max-width: 1366px) {
+  #ddmenu .top-heading {
+    margin: 0 16px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #ddmenu .top-heading {
+    margin: 0 16px;
+  }
+  .menu {
+    padding-top: 10px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #ddmenu .top-heading {
+    margin: 0 20px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .menu {
+    padding-top: 0;
+  }
+  .spelink,
+  .vision-menutxt {
+    display: none;
+  }
+  .spehide {
+    display: block;
+  }
+  .vm,
+  .vm1,
+  .vm2,
+  .vm3 {
+    background-image: none;
+  }
+  #ddmenu {
+    float: none;
+    margin-top: 16px;
+  }
+  #ddmenu .column.mayHide {
+    display: none;
+  }
+
+  /*override the original settings*/
+  #ddmenu ul {
+    width: 100%;
+    display: none;
+    border-radius: 0;
+  }
+
+  #ddmenu li {
+    position: relative;
+    display: block;
+    font-size: 20px;
+    text-align: left;
+    border-bottom: 3px solid rgba(200, 200, 200, 0.2);
+    border-radius: 0;
+    line-height: 46px;
+  }
+
+  #ddmenu .full-width {
+    position: relative;
+  }
+
+  #ddmenu .dropdown {
+    position: relative;
+    *top: auto; /*for IE7*/
+    border: none;
+    border-radius: 0;
+    background-color: #eeeeee;
+  }
+
+  #ddmenu .offset300 {
+    left: 0;
+  }
+
+  #ddmenu .full-width .dropdown {
+    width: auto;
+  }
+
+  #ddmenu .dd-inner {
+    margin: 0;
+    background: none;
+    text-align: left;
+  }
+
+  /*turn each column to list vertically instead of horizontally */
+  #ddmenu .column {
+    width: auto;
+    padding: 0;
+    border: none;
+    display: block;
+  }
+
+  /*move the arrow icon to right*/
+  #ddmenu .caret {
+    position: absolute;
+    left: auto;
+    right: 14px;
+    top: 22px;
+    border-width: 5px;
+  }
+
+  /* All the following are for the .menu-icon (pure CSS) */
+  #ddmenu .menu-icon {
+    font-size: 32px; /*icon size*/
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 32px;
+    text-align: center;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    background-color: #506472;
+    border-radius: 3px;
+
+    margin: 10px 0;
+    /*align the icon to the left
+        margin-left: 12px;
+        margin-right: auto;*/
+  }
+
+  #ddmenu .menu-icon::before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: 4px;
+    width: 1em;
+    height: 0.125em;
+    border-top: 10px double #fff;
+    border-bottom: 3px solid #fff;
+    box-sizing: content-box;
+  }
+
+  #ddmenu .menu-icon-active {
+    background: url(../images/close.png) no-repeat center center #ffbd84;
+  }
+
+  #ddmenu .menu-icon-active::before {
+    border-color: #ffbd84;
+    border: 0;
+  }
+}
+.blink_me {
+  animation-duration: 1200ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-animation: blink 1200ms infinite; /* Safari and Chrome */
+}
+@keyframes blink {
+  from {
+    color: black;
+  }
+  to {
+    color: red;
+  }
+}
+@-webkit-keyframes blink {
+  from {
+    color: black;
+  }
+  to {
+    color: red;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 900px) {
+  #ddmenu .column.mayHide {
+    display: none;
+  }
+
+  #ddmenu ul {
+    width: 100%;
+  }
+
+  #ddmenu li {
+    width: 100%; /*33.33%;*/
+    box-sizing: border-box;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+  }
+  #ddmenu .column li {
+    width: 200px;
+  }
+
+  #ddmenu .full-width {
+    position: relative;
+  }
+
+  #ddmenu .full-width .dropdown {
+    width: auto;
+  }
+
+  #ddmenu .column {
+    border: none;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  #ddmenu {
+    float: left;
+    margin-top: 0;
+    width: 100%;
+  }
+  .top-links a {
+    display: inline-block;
+    padding: 10px;
+  }
+  .top-links {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    float: left;
+    font-size: 16px;
+  }
+}
+/*styles for mobile  max-width: 480px*/
